@@ -1,0 +1,131 @@
+.page {
+  width: 95%;
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  font-family: "Montserrat", sans-serif;
+}
+
+.page > * {
+  flex: 1 100%;
+}
+
+@media print {
+  .sidebar {
+    flex: 1 auto;
+    order: 1;
+  }
+  .main {
+    order: 2;
+  }
+  .footer {
+    order: 3;
+  }
+}
+@media all and (min-width: 600px) {
+  .sidebar {
+    flex: 1 auto;
+    order: 1;
+  }
+  .main {
+    order: 2;
+  }
+  .footer {
+    order: 3;
+  }
+}
+
+@media all and (min-width: 800px) {
+  .main {
+    flex: 2 0px;
+  }
+  .sidebar {
+    order: 1;
+  }
+  .main {
+    order: 2;
+  }
+  .footer {
+    order: 3;
+  }
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-picture {
+  border-radius: 50%;
+  border: 5px solid #00ccdd;
+  height: 100px;
+}
+
+.header-title {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  color: #00ccdd;
+}
+
+.header-title > * {
+  margin: 15px 0;
+}
+
+.sidebar {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-personnal {
+  font-size: large;
+}
+
+.sidebar-personnal,
+.sidebar-entries {
+  margin-top: 15px;
+}
+
+.sidebar-entries > a:visited,
+.sidebar-entries > a {
+  text-decoration: none;
+  color: #00ccdd;
+}
+
+.sidebar-entries > a > .social {
+  height: 30px;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: x-small;
+}
+
+.job {
+  margin-left: 15px;
+}
+
+.job-range {
+  font-weight: bold;
+}
+
+.job-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.job-icon {
+  height: 50px;
+}
+
+.job-mission,
+.job-skills {
+  margin: 10px 0 0 10px;
+  text-align: justify;
+}

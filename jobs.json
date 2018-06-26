@@ -1,0 +1,65 @@
+[
+  {
+    "from": 1438380000000,
+    "to": null,
+    "brand": "xBrain",
+    "logo":
+      "https://media.licdn.com/dms/image/C4D0BAQHq7DYIp7jAQA/company-logo_400_400/0?e=2129500800&v=beta&t=p3BCs6-jDASs170XaqBPAD-SsX-MprGvcCxJOtMql04",
+    "title": "Développeur",
+    "location": "Lille",
+    "mission":
+      "Développement d'interfaces de communication avec les technologies serveurs xBrain, réalisation de prototypes clients, réalisation d'une interface de confort pour voiture. Développement d'API.",
+    "skills": "Git, HTML, CSS, AngularJS, Node.js, React."
+  },
+  {
+    "from": 1372629600000,
+    "to": 1438380000000,
+    "brand": "Oscaro",
+    "logo":
+      "https://media.licdn.com/dms/image/C4E0BAQHLCQ7I8MfvNg/company-logo_400_400/0?e=2129500800&v=beta&t=EOWu-6f-ocNDoPkLviIwCF8ey_9SLis95rSeDFTh958",
+    "title": "Développeur",
+    "location": "Lille",
+    "mission":
+      "Développement d'interfaces de communication avec les technologies serveurs xBrain, réalisation de prototypes clients, réalisation d'une interface de confort pour voiture.",
+    "skills": ".Net 3, .Net 3.5, C#, TFS, HTML, CSS, jQuery, Knockout."
+  },
+  {
+    "from": 1312149600000,
+    "to": 1372629600000,
+    "brand": "Usilink",
+    "logo":
+      "https://www.euratechnologies.com/content/uploads/cache/2015/09/logo_usilink/407663506.jpg",
+    "title": "Développeur",
+    "location": "Lille",
+    "mission":
+      "Développement d'interfaces de communication avec les technologies serveurs xBrain, réalisation de prototypes clients.",
+    "skills":
+      ".Net 3, .Net 3.5, C#, SQL Server 2008, TFS, HTML, CSS, jQuery."
+  },
+  {
+    "from": 1280613600000,
+    "to": 1312149600000,
+    "brand": "Wygwam",
+    "logo":
+      "https://media.licdn.com/dms/image/C4E0BAQH7DMib4J1GDA/company-logo_400_400/0?e=2129500800&v=beta&t=eFFBTGvtDJ7awMguVULB2vPSLf81fGB43FcPk1lvyD8",
+    "title": "Développeur - stage",
+    "location": "Lille",
+    "mission":
+      "Participation à la résolution des problèmatiques clientes: <ul><li>développement spécifique.</li><li>migration de contenus statiques vers un CRM.</li></ul>Développement d'une application ASP.Net MVC.Migration de composants en Flash vers HTML/CSS/jQuery.",
+    "skills":
+      ".Net 3, .Net 3.5, C#, SQL Server 2008, TFS, HTML, CSS, jQuery."
+  },
+  {
+    "from": 1238536800000,
+    "to": 1280613600000,
+    "brand": "Groupe CASAQUE",
+    "logo":
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=",
+    "title": "Développeur - stage",
+    "location": "Villeneuve-d'Ascq",
+    "mission":
+      "Contribuer à l'amélioration de l'ERP développé en interne.",
+    "skills":
+      ".Net 2.5, VB.Net, SQL Server 2005-2008, SVN."
+  }
+]
