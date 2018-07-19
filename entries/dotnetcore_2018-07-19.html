@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>.Net Core 2.1</title>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header>
+        <h1>.Net Core 2.1</h1>
+    </header>
+    <main role="main">
+        <blockquote>Ce billet est une prise de note de la méthode d'initialisation d'un projet en .Net Core 2.1</blockquote>
+        <h2 id="prepare">
+            <a href="#prepare">Préparation</a>
+        </h2>
+        <article>
+            <h3 id="install_sdk">
+                <a href="install_sdk">Installation du SDK</a>
+            </h3>
+            Télécharger le SDK sur
+            <a href="https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1.2.md" target="_blank">
+                <img src="./assets/github_logo.png" class="link__logo link__logo--github" alt="GitHub icon" />
+            </a>
+        </article>
+        <article>
+            <h3 id="install_extension">
+                <a href="#install_extension">Installation de l'extension pour Visual Studio Code</a>
+            </h3>
+            Activer l'extension
+            <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp" target="_blank">
+                <img src="./assets/vscode_extension_csharp.png" class="link__logo" alt="CSharp extension icon">
+            </a>
+        </article>
+        <h2 id="solution">
+            <a href="#solution">Création de la solution</a>
+        </h2>
+        <article>
+            <pre class="prettyprint linenums"><code class="lang-bsh">λ mkdir DotNetCoreSample<br/>λ cd DotNetCoreSample<br/>λ dotnet new sln DotNetCoreSample</code></pre>
+        </article>
+        <h2 id="classlib">
+            <a href="classlib">Ajout d'une ClassLib</a>
+        </h2>
+        <article>
+            <pre class="prettyprint linenums"><code class="lang-bsh">λ dotnet new classlib -o Models<br/>λ dotnet sln add Models/Models.csproj</code></pre>
+        </article>
+        <h2 id="tests">
+            <a href="#tests">Ajout de tests</a>
+        </h2>
+        <article>
+            <pre class="prettyprint linenums"><code class="lang-bsh">λ dotnet new mstest -o Models.Tests<br/>λ dotnet sln add Models.Tests/Models.Tests.csproj<br/>λ cd Models.Tests<br/>λ dotnet add reference ../Models/Models.csproj</code></pre>
+        </article>
+        <h2 id="arborescence">
+            <a href="#arborescence">Arborescence de la solution</a>
+        </h2>
+        <article>
+            <pre class="prettyprint linenums"><code class="lang-bsh">λ dir /s /b<br/>C:\Users\Thomas\workspace\xbrain\DotNetCoreSample\DotNetCoreSample.sln<br/>C:\Users\Thomas\workspace\DotNetCoreSample\Models<br/>C:\Users\Thomas\workspace\DotNetCoreSample\Models.Tests<br/>C:\Users\Thomas\workspace\DotNetCoreSample\Models\Class1.cs<br/>C:\Users\Thomas\workspace\DotNetCoreSample\Models\Models.csproj<br/>C:\Users\Thomas\workspace\DotNetCoreSample\Models\obj<br/>C:\Users\Thomas\workspace\DotNetCoreSample\Models\obj\Models.csproj.nuget.cache<br/>C:\Users\Thomas\workspace\DotNetCoreSample\Models\obj\Models.csproj.nuget.g.props<br/>C:\Users\Thomas\workspace\DotNetCoreSample\Models\obj\Models.csproj.nuget.g.targets<br/>C:\Users\Thomas\workspace\DotNetCoreSample\Models\obj\project.assets.json<br/>C:\Users\Thomas\workspace\DotNetCoreSample\Models.Tests\Models.Tests.csproj<br/>C:\Users\Thomas\workspace\DotNetCoreSample\Models.Tests\obj<br/>C:\Users\Thomas\workspace\DotNetCoreSample\Models.Tests\UnitTest1.cs<br/>C:\Users\Thomas\workspace\DotNetCoreSample\Models.Tests\obj\Models.Tests.csproj.nuget.cache<br/>C:\Users\Thomas\workspace\DotNetCoreSample\Models.Tests\obj\Models.Tests.csproj.nuget.g.props<br/>C:\Users\Thomas\workspace\DotNetCoreSample\Models.Tests\obj\Models.Tests.csproj.nuget.g.targets<br/>C:\Users\Thomas\workspace\DotNetCoreSample\Models.Tests\obj\project.assets.json</code></pre>
+        </article>
+        <h2 id="models_files">
+            <a href="#models_files">Modèles</a>
+        </h2>
+        <article>
+            <h3 id="vehicle_class">Vehicle.cs</h3>
+            <pre class="prettyprint linenums"><code class="lang-cs">using System;<br/><br/>namespace Models {<br/><br/>&nbsp;&nbsp;public abstract class Vehicle {<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;public abstract string Name { get; set; }<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;public abstract int Wheels { get; set; }<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;public abstract bool IsMotorized { get; set; }<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;public bool IsStarted { get; set; }<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;public void Start () {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.IsStarted = true;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;public void Stop () {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.IsStarted = false;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;}<br/><br/>}</code></pre>
+            <h3 id="car_class">Car.cs</h3>
+            <pre class="prettyprint linenums"><code class="lang-cs">namespace Models {<br/><br/>&nbsp;&nbsp;public class Car : Vehicle {<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;public Car() {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.Name = "car";<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.Wheels = 4;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.IsMotorized = true;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;public override string Name { get; set; }<br/>&nbsp;&nbsp;&nbsp;&nbsp;public override int Wheels { get; set; }<br/>&nbsp;&nbsp;&nbsp;&nbsp;public override bool IsMotorized { get; set; }<br/><br/>&nbsp;&nbsp;}<br/>}</code></pre>
+            <h3 id="bike_class">Bike.cs</h3>
+            <pre class="prettyprint linenums"><code class="lang-cs">namespace Models {<br/><br/>&nbsp;&nbsp;public class Bike : Vehicle {<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;public Bike() {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.Name = "bike";<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.Wheels = 2;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.IsMotorized = false;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;public override string Name { get; set; }<br/>&nbsp;&nbsp;&nbsp;&nbsp;public override int Wheels { get; set; }<br/>&nbsp;&nbsp;&nbsp;&nbsp;public override bool IsMotorized { get; set; }<br/><br/>&nbsp;&nbsp;}<br/>}</code></pre>
+        </article>
+        <h2 id="tests_files">
+            <a href="#tests_files">Tests</a>
+        </h2>
+        <article>
+            <h3 id="car_class">CarTest.cs</h3>
+            <pre class="prettyprint linenums"><code class="lang-cs">using Microsoft.VisualStudio.TestTools.UnitTesting;<br/>using Models;<br/><br/>namespace Models.Tests {<br/><br/>&nbsp;&nbsp;[TestClass]<br/>&nbsp;&nbsp;public class CarTest {<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;private Car _car = null;<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;public CarTest() {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this._car = new Car();<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;[TestMethod]<br/>&nbsp;&nbsp;&nbsp;&nbsp;public void hasFourWheels() {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Assert.AreEqual(this._car.Wheels, 4);<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;}<br/>}</code></pre>
+            <h3 id="bike_class">BikeTest.cs</h3>
+            <pre class="prettyprint linenums"><code class="lang-cs">using Microsoft.VisualStudio.TestTools.UnitTesting;<br/>using Models;<br/><br/>namespace Models.Tests {<br/><br/>&nbsp;&nbsp;[TestClass]<br/>&nbsp;&nbsp;public class BikeTest {<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;private Bike _bike = null;<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;public BikeTest() {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this._bike = new Bike();<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;[TestMethod]<br/>&nbsp;&nbsp;&nbsp;&nbsp;public void hasTwoWheels() {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Assert.AreEqual(this._bike.Wheels, 2);<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;}<br/>}</code></pre>
+        </article>
+        <h2 id="running_tests">
+            <a href="#running_tests">Execution des tests</a>
+        </h2>
+        <article>
+            <pre class="prettyprint linenums"><code class="lang-bsh">λ dotnet test<br/>Build started, please wait...<br/>Build started, please wait...<br/>Build completed.<br/><br/>[...]<br/><br/>Build completed.<br/>Microsoft (R) Test Execution Command Line Tool Version 15.7.0<br/>Copyright (c) Microsoft Corporation.  All rights reserved.<br/><br/>Starting test execution, please wait...<br/><br/>Total tests: 2. Passed: 2. Failed: 0. Skipped: 0.<br/>Test Run Successful.<br/>Test execution time: 1.0607 Seconds</code></pre>
+        </article>
+        <h2 id="packaging">
+            <a href="#packaging">Création d'un package Nuget et publication</a>
+        </h2>
+        <article>
+            <pre class="prettyprint linenums"><code class="lang-bsh">λ dotnet pack Models/Models.csproj && dotnet nuget push **/*.nupkg -k my_api_key -s my_nuget_repository</code></pre>
+        </article>
+        <hr/>
+    </main>
+    <footer>
+        <dl>
+            <dt>Rédaction</dt>
+            <dd>2018-07-19</dd>
+            <dt>Auteur</dt>
+            <dd>Thomas Sloboda</dd>
+        </dl>
+        <div>
+            <a href="https://facebook.com/thomas.sloboda" target="_blank">
+                <img src="../assets/facebook.png" alt="facebook icon" class="social">
+            </a>
+            <a href="https://twitter.com/slobodathomas" target="_blank">
+                <img src="../assets/twitter.png" alt="twitter icon" class="social">
+            </a>
+            <a href="https://github.com/thomassloboda" target="_blank">
+                <img src="../assets/github.png" alt="github icon" class="social">
+            </a>
+            <a href="https://www.linkedin.com/in/thomassloboda/" target="_blank">
+                <img src="../assets/linkedin.png" alt="linkedin icon" class="social">
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>

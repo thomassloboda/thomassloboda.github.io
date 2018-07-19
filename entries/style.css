@@ -1,0 +1,100 @@
+body {
+  font-family: monospace;
+  display: flex;
+  flex-flow: column wrap;
+  width: 80%;
+  padding: 0 10%;
+  overflow-x: hidden;
+}
+
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L5,
+li.L6,
+li.L7,
+li.L8 {
+  list-style-type: decimal !important;
+}
+
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  color: #00ccdd;
+}
+
+h2 {
+  color: #00ccdd;
+  text-decoration: underline;
+}
+
+h3 {
+  text-decoration: underline;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+}
+
+footer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 12px;
+}
+
+blockquote {
+  border-left: 3px solid #aaa;
+  padding-left: 10px;
+  width: calc(100% - 10px);
+}
+
+.link__logo {
+  display: inline-block;
+  position: relative;
+  max-width: 100px;
+  max-height: 30px;
+}
+
+.link__logo--github {
+  top: 8px;
+}
+
+.social {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin-bottom: 10%;
+}
+
+li a {
+  color: #000;
+  text-decoration: none;
+}
+
+hr {
+  border: solid 1px #00ccdd;
+  width: 100%;
+}
