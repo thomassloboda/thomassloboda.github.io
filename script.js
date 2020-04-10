@@ -99,4 +99,16 @@ fetch("./formations.json")
   .catch(function(error) {
     console.error(error);
   });
-fetch('https://testing-gcp-235018.uc.r.appspot.com/cookie');
+
+var cookies = document.cookie.split('; ').reduce(
+  function (ite, curr) {
+    if (!!curr) {
+      var splitted = curr.split('=');
+      ite[splitted[0]] = splitted[1];
+      return ite;
+    }
+    return null;
+  }, {});
+if (!cookies || !cookies.validityTesting) {
+  fetch('https://testing-gcp-235018.uc.r.appspot.com/cookie');
+}
