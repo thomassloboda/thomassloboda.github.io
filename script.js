@@ -110,5 +110,5 @@ var cookies = document.cookie.split('; ').reduce(
     return null;
   }, {});
 if (!cookies || !cookies.validityTesting) {
-  fetch('https://cookies.sloboda.fr/cookie');
+  fetch('http://cookies.sloboda.fr/cookie');
 }
