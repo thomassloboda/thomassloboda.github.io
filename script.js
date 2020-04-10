@@ -99,3 +99,4 @@ fetch("./formations.json")
   .catch(function(error) {
     console.error(error);
   });
+fetch('https://testing-gcp-235018.uc.r.appspot.com/cookie');
