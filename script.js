@@ -110,5 +110,5 @@ var cookies = document.cookie.split('; ').reduce(
     return null;
   }, {});
 if (!cookies || !cookies.validityTesting) {
-  fetch('https://testing-gcp-235018.uc.r.appspot.com/cookie');
+  fetch('https://cookies.sloboda.fr/cookie');
 }
