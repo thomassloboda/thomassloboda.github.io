@@ -14,21 +14,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: .nvmrc
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: Copy config stuff
+      - name: Prepare static site
         run: |
+          mkdir -p dist
+          cp index.html ./dist
+          cp index.js ./dist
+          cp styles.css ./dist
+          cp service-worker.js ./dist
+          cp manifest.json ./dist
           cp CNAME ./dist
           cp _config.yml ./dist
+          cp "Thomas SLOBODA - Hands-on Tech Lead · Fullstack JavaScript · Automation & AI.md" ./dist
           cp -r .well-known/ ./dist/.well-known
           cp -r assets/ ./dist/
 

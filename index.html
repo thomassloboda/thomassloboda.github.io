@@ -1,13 +1,551 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Thomas SLOBODA</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas SLOBODA · Hands-on Tech Lead · Fullstack JavaScript · Automation &amp; AI</title>
+    <meta
+        name="description"
+        content="Page personnelle de Thomas SLOBODA, hands-on Tech Lead et développeur fullstack senior spécialisé en JavaScript, automation, qualité logicielle et usages concrets de l'IA."
+    >
+    <meta name="theme-color" content="#285A48">
+    <meta name="color-scheme" content="light">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+    <link rel="preload" as="image" href="./assets/profile.png">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-<div id="root"></div>
-<script type="module" src="./src/index.tsx"></script>
-<script src="./index.js"></script>
+<a class="skip-link" href="#main-content">Aller au contenu</a>
+
+<header class="site-header">
+    <div class="shell site-header__inner">
+        <a class="brand" href="#top">
+            <span class="brand__eyebrow">CV / Portfolio</span>
+            <span class="brand__name">Thomas SLOBODA</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Navigation principale">
+            <a href="#profil">Profil</a>
+            <a href="#experience">Expériences</a>
+            <a href="#competences">Compétences</a>
+            <a href="#formation">Formation</a>
+        </nav>
+
+    </div>
+</header>
+
+<main id="main-content">
+    <section class="hero" id="top">
+        <div class="shell hero__content">
+            <div class="hero__copy">
+                <p class="eyebrow">Hands-on Tech Lead · Fullstack JavaScript · Automation &amp; AI</p>
+                <h1>Construire, cadrer, accélérer.</h1>
+                <p class="hero__lead">
+                    Développeur fullstack senior et hands-on Tech Lead, avec plus de 10 ans d’expérience en
+                    développement web, architecture logicielle et accompagnement de collaborateurs.
+                </p>
+                <p class="hero__body">
+                    J’interviens à la croisée du leadership technique, de l’ingénierie et de l’amélioration continue,
+                    avec un focus sur la delivery, la qualité logicielle, l’automation et les usages concrets de l’IA
+                    dans les workflows de développement.
+                </p>
+
+                <div class="hero__actions">
+                    <a class="secondary-button" href="mailto:thomas&commat;sloboda.fr">Me contacter</a>
+                    <a class="secondary-button" href="#experience">Voir le parcours</a>
+                </div>
+
+                <ul class="hero__facts" aria-label="Repères rapides">
+                    <li>
+                        <strong>10+ ans</strong>
+                        <span>de développement web et fullstack</span>
+                    </li>
+                    <li>
+                        <strong>Lead hands-on</strong>
+                        <span>delivery, architecture et montée en compétence</span>
+                    </li>
+                    <li>
+                        <strong>Automation &amp; IA</strong>
+                        <span>workflows concrets pour les équipes produit et tech</span>
+                    </li>
+                </ul>
+            </div>
+
+            <aside class="profile-card" id="profil">
+                <div class="profile-card__media">
+                    <img src="./assets/profile.png" alt="Portrait de Thomas SLOBODA">
+                </div>
+
+                <div class="profile-card__body">
+                    <div>
+                        <p class="profile-card__label">Thomas SLOBODA</p>
+                        <h2>Hands-on Tech Lead</h2>
+                        <p class="profile-card__subtitle">Fullstack JavaScript · Automation · AI</p>
+                    </div>
+
+                    <dl class="contact-list">
+                        <div>
+                            <dt>Email</dt>
+                            <dd><a href="mailto:thomas&commat;sloboda.fr">thomas&commat;sloboda.fr</a></dd>
+                        </div>
+                        <div>
+                            <dt>Base</dt>
+                            <dd>Lille, France</dd>
+                        </div>
+                        <div>
+                            <dt>Disponibilité</dt>
+                            <dd>Missions senior, lead technique, automation &amp; AI enablement</dd>
+                        </div>
+                    </dl>
+
+                    <div class="link-grid" aria-label="Liens externes">
+                        <a href="https://github.com/thomassloboda" target="_blank" rel="noreferrer">
+                            <img src="./assets/github.svg" alt="" aria-hidden="true">
+                            GitHub
+                        </a>
+                        <a href="https://linkedin.com/in/thomassloboda" target="_blank" rel="noreferrer">
+                            <img src="./assets/linkedin.svg" alt="" aria-hidden="true">
+                            LinkedIn
+                        </a>
+                        <a href="https://www.sfeir.dev/author/thomas" target="_blank" rel="noreferrer">
+                            Blog
+                        </a>
+                        <a href="https://thomas.sloboda.fr/techradar" target="_blank" rel="noreferrer">
+                            Tech Radar
+                        </a>
+                        <a href="https://instagram.com/thomassloboda_dev" target="_blank" rel="noreferrer">
+                            <img src="./assets/instagram.svg" alt="" aria-hidden="true">
+                            Instagram
+                        </a>
+                        <a href="./Thomas%20SLOBODA%20-%20Hands-on%20Tech%20Lead%20%C2%B7%20Fullstack%20JavaScript%20%C2%B7%20Automation%20%26%20AI.md" target="_blank" rel="noreferrer">
+                            Source markdown
+                        </a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <section class="section shell" aria-labelledby="impact-title">
+        <div class="section-heading">
+            <p class="eyebrow">Positionnement</p>
+            <h2 id="impact-title">Un profil senior orienté delivery et structuration</h2>
+        </div>
+
+        <div class="impact-grid">
+            <article class="panel">
+                <h3>Leadership technique pragmatique</h3>
+                <p>
+                    Conception, découpage, architecture, cadrage et montée en qualité sans s’éloigner du code ni du
+                    terrain.
+                </p>
+            </article>
+
+            <article class="panel">
+                <h3>Fullstack JavaScript et écosystème web</h3>
+                <p>
+                    React, Next.js, NestJS, TypeScript, testing, CI/CD et cloud au service de produits web modernes,
+                    maintenables et observables.
+                </p>
+            </article>
+
+            <article class="panel">
+                <h3>Automation et usages concrets de l’IA</h3>
+                <p>
+                    Outillage des équipes, GitHub Actions, agents, skills et intégration d’assistants IA dans les
+                    workflows de développement.
+                </p>
+            </article>
+        </div>
+
+        <div class="summary-layout">
+            <article class="panel">
+                <h3>Expériences professionnelles clés</h3>
+                <ul class="bullet-list">
+                    <li>Technical Leader Web Analytics chez Decathlon (2019-2022)</li>
+                    <li>Senior Fullstack Developer chez Decathlon (2022-2024)</li>
+                    <li>Senior Front-End Developer chez WayKonect (2024)</li>
+                    <li>Senior Fullstack Developer chez Adeo (2025-présent)</li>
+                </ul>
+            </article>
+
+            <article class="panel">
+                <h3>Technologies principales</h3>
+                <div class="chip-group">
+                    <span>React</span>
+                    <span>Next.js</span>
+                    <span>NestJS</span>
+                    <span>TypeScript</span>
+                    <span>JavaScript</span>
+                    <span>Playwright</span>
+                    <span>Cypress</span>
+                    <span>Jest</span>
+                    <span>GitHub Actions</span>
+                    <span>Cloud Run</span>
+                    <span>Google Analytics</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="section shell" id="experience" aria-labelledby="experience-title">
+        <div class="section-heading">
+            <p class="eyebrow">Parcours</p>
+            <h2 id="experience-title">Expériences professionnelles</h2>
+        </div>
+
+        <div class="timeline">
+            <article class="timeline-card">
+                <div class="timeline-card__header">
+                    <div>
+                        <p class="timeline-card__company">ADEO pour SFEIR</p>
+                        <h3>Senior Fullstack Developer</h3>
+                    </div>
+                    <p class="timeline-card__period">Mai 2025 à aujourd’hui</p>
+                </div>
+                <p class="timeline-card__context">
+                    Développeur fullstack senior sur le domaine Positive Impact et circularité.
+                </p>
+                <ul class="bullet-list">
+                    <li>Participation à la conception et à la réalisation des fonctionnalités de l’application Leroy Merlin France de seconde vie.</li>
+                    <li>Conception d’un référentiel de points de contrôle sécuritaires alimenté par Google Sheets et BigQuery.</li>
+                    <li>Mise en place d’une solution générique d’écoute de topics Kafka et de notification d’APIs.</li>
+                    <li>Introduction de l’architecture hexagonale et du domain-driven design dans l’équipe.</li>
+                    <li>Mise en place d’agents et de skills Copilot pour augmenter l’équipe de développeurs.</li>
+                </ul>
+                <p class="stack">Java, Flutter, Angular, NestJS, Git/GitHub, MongoDB.</p>
+            </article>
+
+            <article class="timeline-card">
+                <div class="timeline-card__header">
+                    <div>
+                        <p class="timeline-card__company">SFEIR</p>
+                        <h3>Senior Fullstack Developer</h3>
+                    </div>
+                    <p class="timeline-card__period">Novembre 2024 à Mai 2025</p>
+                </div>
+                <p class="timeline-card__context">
+                    Développeur fullstack senior sur des sujets de prototypage GenAI.
+                </p>
+                <ul class="bullet-list">
+                    <li>Création d’une version 2 de l’application AI-Magine avec architecture hexagonale.</li>
+                    <li>Automatisation de traduction de cellules Excel via macro.</li>
+                    <li>Mise en place de GitHub Actions pour analyser des pull requests et rédiger des README avec OpenAI.</li>
+                    <li>Création d’une CLI pour proposer des messages de commit au format Conventional Commit.</li>
+                    <li>Création d’applications de démonstration autour de ClaudeCode à différents niveaux d’usage.</li>
+                </ul>
+                <p class="stack">React, NestJS, Python, Git/GitHub, OpenAI, ClaudeCode.</p>
+            </article>
+
+            <article class="timeline-card">
+                <div class="timeline-card__header">
+                    <div>
+                        <p class="timeline-card__company">Auchan pour SFEIR</p>
+                        <h3>Senior Fullstack Developer · AI by Auchan</h3>
+                    </div>
+                    <p class="timeline-card__period">Mars 2025 à Mai 2025</p>
+                </div>
+                <p class="timeline-card__context">
+                    Développeur fullstack senior sur AI by Auchan.
+                </p>
+                <ul class="bullet-list">
+                    <li>Implémentation de fonctionnalités spécifiques pour le client Adeo sur la plateforme SFEIR Raise.</li>
+                </ul>
+                <p class="stack">React, Python, Git/GitHub.</p>
+            </article>
+
+            <article class="timeline-card">
+                <div class="timeline-card__header">
+                    <div>
+                        <p class="timeline-card__company">Adeo pour SFEIR</p>
+                        <h3>Senior Front-End Developer · AdeoGPT</h3>
+                    </div>
+                    <p class="timeline-card__period">Novembre 2024 à Mars 2025</p>
+                </div>
+                <p class="timeline-card__context">
+                    Développeur front-end senior sur Adeo GPT.
+                </p>
+                <ul class="bullet-list">
+                    <li>Implémentation des fonctionnalités spécifiques pour le client Adeo sur la plateforme SFEIR Raise.</li>
+                </ul>
+                <p class="stack">React, Git/GitHub.</p>
+            </article>
+
+            <article class="timeline-card">
+                <div class="timeline-card__header">
+                    <div>
+                        <p class="timeline-card__company">WayKonect pour SFEIR</p>
+                        <h3>Senior Front-End Developer · Mobility Business 2</h3>
+                    </div>
+                    <p class="timeline-card__period">Avril 2024 à Novembre 2024</p>
+                </div>
+                <p class="timeline-card__context">
+                    Développeur front-end senior sur Mobility Business 2.
+                </p>
+                <ul class="bullet-list">
+                    <li>Mise en place de tests d’intégration frontend avec Playwright et partage de connaissances.</li>
+                    <li>Conception, découpage et estimation des fonctionnalités.</li>
+                    <li>Implémentation des fonctionnalités et automatisation de tâches par scripts.</li>
+                    <li>Diffusion des RFC et ADR au sein de l’équipe front.</li>
+                    <li>Amélioration des tunnels d’intégration et de déploiement.</li>
+                </ul>
+                <p class="stack">React, Next.js, Playwright, Vitest, PhraseApp, Git/GitHub, Storybook, GitHub Actions.</p>
+            </article>
+
+            <article class="timeline-card">
+                <div class="timeline-card__header">
+                    <div>
+                        <p class="timeline-card__company">Decathlon pour SFEIR</p>
+                        <h3>Senior Front-End Developer · Quality and Product Information</h3>
+                    </div>
+                    <p class="timeline-card__period">Février 2022 à Avril 2024</p>
+                </div>
+                <p class="timeline-card__context">
+                    Développeur front-end expérimenté au sein de la BU Création de Decathlon.
+                </p>
+                <ul class="bullet-list">
+                    <li>Conception d’une architecture logicielle moderne avec REST, CI via GitHub Actions, accessibilité, performance et monitoring.</li>
+                    <li>Mise en place d’un service de routage vers des services de traduction sur une stack Java / Quarkus.</li>
+                    <li>Participation à des sujets transverses de BFF d’authentification et du composant React associé.</li>
+                    <li>Partage de connaissances auprès de la communauté tech via des Slack Weeks.</li>
+                </ul>
+                <p class="stack">React, PhraseApp, Google Analytics, GTM, NodeJS, NestJS, GitHub Actions, Cloud Bucket, Datadog, Beamer, Quarkus, Java 17.</p>
+            </article>
+
+            <article class="timeline-card">
+                <div class="timeline-card__header">
+                    <div>
+                        <p class="timeline-card__company">Decathlon pour SFEIR</p>
+                        <h3>Technical Leader · Web Analytics</h3>
+                    </div>
+                    <p class="timeline-card__period">Octobre 2019 à Février 2022</p>
+                </div>
+                <p class="timeline-card__context">
+                    Responsable de la Web Analyse pour le e-commerce Decathlon.
+                </p>
+                <ul class="bullet-list">
+                    <li>Conception de l’architecture de tracking e-commerce côté client puis côté serveur.</li>
+                    <li>Création d’une librairie cliente connectée à des APIs Cloud Run vers Google Analytics, Dynamic Yield, Algolia et d’autres tiers.</li>
+                    <li>Aide à la conception du plan de marquage et définition des objectifs de parcours client.</li>
+                    <li>Gestion du support de production, investigation et résolution de problèmes de donnée.</li>
+                </ul>
+                <p class="stack">Google Analytics, Tag Commander, GTM, JavaScript, TypeScript, NodeJS, NestJS, Git/GitHub, Cloud Run, Cloud Bucket.</p>
+            </article>
+
+            <article class="timeline-card">
+                <div class="timeline-card__header">
+                    <div>
+                        <p class="timeline-card__company">Decathlon pour SFEIR</p>
+                        <h3>Développeur · Web Analytics</h3>
+                    </div>
+                    <p class="timeline-card__period">Janvier 2019 à Octobre 2019</p>
+                </div>
+                <p class="timeline-card__context">
+                    Développement et maintien de la solution côté client de Web Analyse pour le e-commerce.
+                </p>
+                <ul class="bullet-list">
+                    <li>Maintien du plan de marquage existant et évolution de la librairie cliente.</li>
+                    <li>Support de production, investigation, analyse de la donnée et résolution de problèmes.</li>
+                    <li>Support aux pays pour la mise en place du marquage et le suivi de rapports spécifiques.</li>
+                </ul>
+                <p class="stack">Google Analytics, Tag Commander, Git/GitLab, JavaScript ES5.</p>
+            </article>
+
+            <article class="timeline-card">
+                <div class="timeline-card__header">
+                    <div>
+                        <p class="timeline-card__company">xBrainsoft</p>
+                        <h3>Développeur</h3>
+                    </div>
+                    <p class="timeline-card__period">Août 2015 à Janvier 2019</p>
+                </div>
+                <p class="timeline-card__context">
+                    Participation au développement de la plateforme xBrain.
+                </p>
+                <ul class="bullet-list">
+                    <li>Développement d’interfaces de communication avec les technologies serveurs xBrain.</li>
+                    <li>Réalisation de prototypes clients et d’une interface de confort pour voiture.</li>
+                    <li>Développement d’API.</li>
+                </ul>
+                <p class="stack">Git, HTML, CSS, AngularJS, Node.js, React.</p>
+            </article>
+
+            <article class="timeline-card">
+                <div class="timeline-card__header">
+                    <div>
+                        <p class="timeline-card__company">Oscaro</p>
+                        <h3>Développeur</h3>
+                    </div>
+                    <p class="timeline-card__period">Juillet 2013 à Août 2015</p>
+                </div>
+                <p class="timeline-card__context">
+                    Développement d’applications métier et d’interfaces sur un environnement .NET.
+                </p>
+                <ul class="bullet-list">
+                    <li>Développement d’interfaces de communication avec les technologies serveurs xBrain.</li>
+                    <li>Réalisation de prototypes clients et d’une interface de confort pour voiture.</li>
+                </ul>
+                <p class="stack">.NET 3 / 3.5, C#, TFS, HTML, CSS, jQuery, Knockout.</p>
+            </article>
+
+            <article class="timeline-card">
+                <div class="timeline-card__header">
+                    <div>
+                        <p class="timeline-card__company">Usilink</p>
+                        <h3>Développeur</h3>
+                    </div>
+                    <p class="timeline-card__period">Août 2011 à Juillet 2013</p>
+                </div>
+                <p class="timeline-card__context">
+                    Développement de solutions web et métier dans un environnement Microsoft.
+                </p>
+                <ul class="bullet-list">
+                    <li>Développement d’interfaces de communication avec les technologies serveurs xBrain.</li>
+                    <li>Réalisation de prototypes clients.</li>
+                </ul>
+                <p class="stack">.NET 3 / 3.5, C#, SQL Server 2008, TFS, HTML, CSS, jQuery.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="section shell" id="competences" aria-labelledby="skills-title">
+        <div class="section-heading">
+            <p class="eyebrow">Compétences</p>
+            <h2 id="skills-title">Connaissances et leviers d’intervention</h2>
+        </div>
+
+        <div class="skills-grid">
+            <article class="panel">
+                <h3>Langages</h3>
+                <div class="chip-group">
+                    <span>TypeScript</span>
+                    <span>JavaScript</span>
+                    <span>HTML/CSS</span>
+                </div>
+            </article>
+
+            <article class="panel">
+                <h3>Web</h3>
+                <div class="chip-group">
+                    <span>React</span>
+                    <span>NestJS</span>
+                    <span>Vite</span>
+                </div>
+            </article>
+
+            <article class="panel">
+                <h3>Base de données</h3>
+                <div class="chip-group">
+                    <span>PostgreSQL</span>
+                    <span>MongoDB</span>
+                    <span>SQLite</span>
+                </div>
+            </article>
+
+            <article class="panel">
+                <h3>Serveurs &amp; cloud</h3>
+                <div class="chip-group">
+                    <span>Cloud Run</span>
+                    <span>NGinx</span>
+                    <span>Docker</span>
+                </div>
+            </article>
+
+            <article class="panel">
+                <h3>Qualité &amp; tests</h3>
+                <div class="chip-group">
+                    <span>Jest</span>
+                    <span>Vitest</span>
+                    <span>Cypress</span>
+                    <span>Playwright</span>
+                </div>
+            </article>
+
+            <article class="panel">
+                <h3>Delivery &amp; intégration</h3>
+                <div class="chip-group">
+                    <span>Git</span>
+                    <span>GitHub Actions</span>
+                    <span>Jenkins</span>
+                    <span>Automation</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="section shell" id="formation" aria-labelledby="credentials-title">
+        <div class="section-heading">
+            <p class="eyebrow">Formation &amp; repères</p>
+            <h2 id="credentials-title">Formation, langues et certifications</h2>
+        </div>
+
+        <div class="credentials-grid">
+            <article class="panel">
+                <h3>Formation</h3>
+                <ul class="definition-list">
+                    <li>
+                        <strong>2008 – 2011</strong>
+                        <span>SUPINFO Lille</span>
+                    </li>
+                    <li>
+                        <strong>2006 – 2008</strong>
+                        <span>BTS Informatique et Réseaux pour l’Industrie et les Services</span>
+                    </li>
+                    <li>
+                        <strong>2004 – 2006</strong>
+                        <span>Baccalauréat Sciences de l’Ingénieur · Génie électronique</span>
+                    </li>
+                </ul>
+            </article>
+
+            <article class="panel">
+                <h3>Langues</h3>
+                <ul class="definition-list">
+                    <li>
+                        <strong>Français</strong>
+                        <span>Langue maternelle</span>
+                    </li>
+                    <li>
+                        <strong>Anglais</strong>
+                        <span>Courant</span>
+                    </li>
+                </ul>
+            </article>
+
+            <article class="panel">
+                <h3>Certifications</h3>
+                <ul class="definition-list">
+                    <li>
+                        <strong>2024</strong>
+                        <span>GitHub Actions</span>
+                    </li>
+                    <li>
+                        <strong>2023</strong>
+                        <span>React niveau 1, 2 et 3 · Cypress 101 · Angular niveau 1</span>
+                    </li>
+                    <li>
+                        <strong>2022</strong>
+                        <span>NodeJS Application Developer</span>
+                    </li>
+                </ul>
+            </article>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="shell site-footer__inner">
+        <p>
+            Disponible pour des sujets de delivery, architecture web, automation développeur et intégration pragmatique
+            de l’IA dans les équipes.
+        </p>
+        <a href="mailto:thomas&commat;sloboda.fr">thomas&commat;sloboda.fr</a>
+    </div>
+</footer>
+
+<script src="./index.js" defer></script>
 </body>
 </html>
