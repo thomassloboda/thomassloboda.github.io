@@ -1,40 +1,78 @@
-const urlsToCache = [
-  "./assets/instagram.svg",
-  "./assets/instagram_hover.svg",
-  "./assets/linkedin.svg",
-  "./assets/linkedin_hover.svg",
-  "./assets/github.svg",
-  "./assets/github_hover.svg",
-  "./assets/sfeir.svg",
-  "./assets/sfeir_hover.svg",
+const CACHE_NAME = "portfolio-shell-v2";
+const APP_SHELL = [
+  "./",
+  "./index.html",
+  "./styles.css",
+  "./index.js",
+  "./manifest.json",
   "./assets/profile.png",
+  "./assets/github.svg",
+  "./assets/linkedin.svg",
+  "./assets/instagram.svg",
+  "./assets/favicon.ico",
+  "./assets/favicon-32x32.png",
 ];
-const CACHE_NAME = "image-cache-v1";
 
-self.addEventListener("install", function (event) {
+self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(function (cache) {
-      return cache.addAll(urlsToCache);
-    })
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL))
   );
+  self.skipWaiting();
 });
 
-self.addEventListener("fetch", async (event) => {
-  if (event.request.destination === "image") {
-    event.respondWith(
-      caches.open(CACHE_NAME).then((cache) => {
-        return cache.match(event.request).then((cachedResponse) => {
-          return (
-            cachedResponse ||
-            fetch(event.request.url).then((fetchedResponse) => {
-              cache.put(event.request, fetchedResponse.clone());
-              return fetchedResponse;
-            })
-          );
-        });
-      })
-    );
-  } else {
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
+    caches.keys().then((keys) =>
+      Promise.all(
+        keys
+          .filter((key) => key !== CACHE_NAME)
+          .map((key) => caches.delete(key))
+      )
+    )
+  );
+  self.clients.claim();
+});
+
+self.addEventListener("fetch", (event) => {
+  if (event.request.method !== "GET") {
     return;
   }
+
+  const requestUrl = new URL(event.request.url);
+  const isSameOrigin = requestUrl.origin === self.location.origin;
+
+  if (!isSameOrigin) {
+    return;
+  }
+
+  if (event.request.mode === "navigate") {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          const responseClone = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put("./index.html", responseClone));
+          return response;
+        })
+        .catch(() => caches.match("./index.html"))
+    );
+    return;
+  }
+
+  if (!["style", "script", "image"].includes(event.request.destination)) {
+    return;
+  }
+
+  event.respondWith(
+    caches.match(event.request).then((cachedResponse) => {
+      if (cachedResponse) {
+        return cachedResponse;
+      }
+
+      return fetch(event.request).then((networkResponse) => {
+        const responseClone = networkResponse.clone();
+        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone));
+        return networkResponse;
+      });
+    })
+  );
 });

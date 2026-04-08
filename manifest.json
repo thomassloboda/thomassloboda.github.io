@@ -1,0 +1,20 @@
+{
+  "name": "Thomas SLOBODA",
+  "short_name": "TSLOBODA",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#285A48",
+  "icons": [
+    {
+      "src": "./assets/android-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/favicon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ]
+}
